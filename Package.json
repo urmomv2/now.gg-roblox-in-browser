@@ -1,0 +1,11 @@
+{
+  "name": "nowgg-roblox",
+  "version": "1.0.0",
+  "description": "Static copy of now.gg Roblox interface",
+  "scripts": {
+    "start": "serve -l ${PORT:-3000}"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
