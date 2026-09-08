@@ -4,13 +4,13 @@ FROM node:20-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json (if it exists)
+# Copy package.json (and package-lock.json if it exists)
 COPY package*.json ./
 
-# Install only production dependencies
-RUN npm ci --only=production
+# Install dependencies (no lockfile required)
+RUN npm install --omit=dev
 
-# Copy the rest of your static files (HTML, CSS, JS, assets)
+# Copy the rest of your static files
 COPY . .
 
 # Expose the port your app runs on
